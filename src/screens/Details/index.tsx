@@ -3,11 +3,16 @@ import React from 'react'
 import { styles } from './style';
 import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps';
 import HeaderBar from '../../components/headerBar';
+import MapCard from '../../components/MapCard';
 
-const DetailPage = () => {
+const DetailPage = (props: any) => {
+    const { data } = props.route.params;
     return (
       <View>
-        <HeaderBar />
+        <HeaderBar
+          onPress={() => props.navigation.goBack()}
+          title={data.trackingId}
+        />
         <View style={styles.container}>
           <MapView
             provider={PROVIDER_GOOGLE} // remove if not using Google Maps
@@ -21,7 +26,8 @@ const DetailPage = () => {
           >
             <Marker coordinate={{ latitude: 37.78825, longitude: -122.4324 }} />
           </MapView>
-        </View>
+            </View>
+            <MapCard/>
       </View>
     );
 }
