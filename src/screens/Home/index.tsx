@@ -7,6 +7,7 @@ import AppHeader from '../../components/header';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { FlatList } from 'react-native';
 import { Order, OrdersArray } from "../../utils/dataSource";
+import ListEmpty from '../../components/listEmptyComponent';
 
 
 
@@ -37,6 +38,7 @@ const HomePage = (props: any) => {
       </AppHeader>
       <FlatList
         data={filteredOrders}
+        ListEmptyComponent={<ListEmpty/>}
         renderItem={({ item }) => (
           <OrderCard
             onPress={() =>

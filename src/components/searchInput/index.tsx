@@ -13,7 +13,7 @@ const SearchInput: React.FC<SearchInputProps>  = ({ onChangeText}) => {
       <TextInput
         placeholder="Enter Order Id"
         style={styles.input}
-        keyboardType="decimal-pad"
+        keyboardType="default"
         onChangeText={onChangeText}
       />
     </View>
