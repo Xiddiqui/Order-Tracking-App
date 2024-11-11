@@ -26,8 +26,8 @@ const DetailPage = (props: any) => {
           >
             <Marker coordinate={{ latitude: 37.78825, longitude: -122.4324 }} />
           </MapView>
-            </View>
-            <MapCard/>
+        </View>
+        <MapCard status={data.Status} />
       </View>
     );
 }
